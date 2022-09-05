@@ -29,6 +29,7 @@ public class CompassHeadingModule extends ReactContextBaseJavaModule implements 
 
     private int mAzimuth = 0; // degree
     private int mFilter = 1;
+    private int mAccuracy = 1;
 
     private SensorManager sensorManager;
 
@@ -180,5 +181,7 @@ public class CompassHeadingModule extends ReactContextBaseJavaModule implements 
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+      mAccuracy = accuracy;
+    }
 }
